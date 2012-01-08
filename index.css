@@ -1,0 +1,69 @@
+body {
+	background: #000;
+}
+
+body, div {
+	font-family: sans, Tahoma;
+	font-size: 12px;
+}
+
+#note {
+	color: #fff;
+	font-size: 10em;
+	position: absolute;
+	left: 50%;
+	margin-left: -50px;
+}
+
+#keyboard {
+	position: absolute;
+	left: 50%;
+	margin-left: -130px;
+	top: 200px;
+}
+
+#keyboard .note {
+	margin: 0;
+	margin-right: 5px;
+	padding: 0;
+	width: 30px;
+	height: 100px;
+	border: 1px solid #000;
+	float: left;
+	position: relative;
+	background: #fff;
+}
+
+#keyboard .note:hover {
+	background: #c0c0c0;
+	cursor: pointer;
+}
+
+#keyboard .sharps {
+	position: absolute;
+	left: 0;
+	top: 0;
+	left: 20px;
+	height: 0;
+}
+
+#keyboard .sharps > div {
+	height: 60px;
+	width: 25px;
+	margin-right: 10px;
+	background: #000;
+	color: #fff;
+}
+
+#keyboard .note div {
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+}
+#keyboard div.sharps .note div {
+	left: 5px;
+}
+
+.space {
+	visibility: hidden;
+}
