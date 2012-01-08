@@ -105,7 +105,7 @@ var levels = (function () {
 })();
 
 function createLevel(difficulty, clef, availableNotes) {
-	var MAX_GUESSES = 3;
+	var MAX_GUESSES = 10;
 
 	var currentNote = availableNotes.random();
 	var startTime;
