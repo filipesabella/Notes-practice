@@ -7,7 +7,7 @@ for line in open('index.html'):
 	if resultJs:
 		fileName = resultJs.group(1)
 		output += '<script type="text/javascript">' + open(fileName).read() + '</script>'
-	if resultCss:
+	elif resultCss:
 		fileName = resultCss.group(1)
 		output += '<style type="text/css">' + open(fileName).read() + '</style>'
 	else:

@@ -9345,8 +9345,7 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 
 
 })( window );
-</script>		<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript">/*!
+</script><script type="text/javascript">/*!
  * jQuery UI 1.8.16
  *
  * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
@@ -9409,8 +9408,7 @@ a*2-e,0,d,e)*0.5+d*0.5+b}})}(jQuery);
  */
 (function(b){b.effects.highlight=function(c){return this.queue(function(){var a=b(this),e=["backgroundImage","backgroundColor","opacity"],d=b.effects.setMode(a,c.options.mode||"show"),f={backgroundColor:a.css("backgroundColor")};if(d=="hide")f.opacity=0;b.effects.save(a,e);a.show().css({backgroundImage:"none",backgroundColor:c.options.color||"#ffff99"}).animate(f,{queue:false,duration:c.duration,easing:c.options.easing,complete:function(){d=="hide"&&a.hide();b.effects.restore(a,e);d=="show"&&!b.support.opacity&&
 this.style.removeAttribute("filter");c.callback&&c.callback.apply(this,arguments);a.dequeue()}})})}})(jQuery);
-;</script>		<script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script>
-<script type="text/javascript">/*
+;</script><script type="text/javascript">/*
 
  VexFlow Engraver 1.0-pre2
  A library for rendering musical notation and guitar tablature in HTML5.
@@ -9632,8 +9630,7 @@ a.arcHelper=function(b,c,d,e,f,g){Vex.Assert(f>e,"end angle "+f+" less than or e
 a.stroke=function(){this.paper.path(this.path).attr(this.attributes).attr("fill","none").attr("stroke-width",1);return this};a.closePath=function(){this.path+="Z";return this};a.fillText=function(b,c,d){var e=0;if(this.state.font_size==9)e=1;this.paper.text(c+Vex.Flow.textWidth(b)/2+2,d-this.state.font_size/(3.5*this.state.scale.y)+e,b).attr(this.attributes);return this};a.save=function(){this.state_stack.push({state:{font_family:this.state.font_family},attributes:{font:this.attributes.font}});return this};
 a.restore=function(){var b=this.state_stack.pop();this.state.font_family=b.state.font_family;this.attributes.font=b.attributes.font;return this};
 
-</script>		<script type="text/javascript" src="vexflow.js"></script>
-<script type="text/javascript">Array.prototype.random = function () {
+</script><script type="text/javascript">Array.prototype.random = function () {
 	return this[Math.floor(Math.random() * this.length)];
 };
 
@@ -9878,8 +9875,7 @@ function range(min, max) {
 			return Math.floor(Math.random() * (max - min + 1) + min);
 		}
 	}
-}</script>		<script type="text/javascript" src="index.js"></script>
-	</head>
+}</script>	</head>
 	<body>
 		<canvas id="canvas" width="120" height="140"></canvas>
 		<div id="keyboard">
