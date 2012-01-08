@@ -9743,6 +9743,7 @@ function createLevel(difficulty, clef, availableNotes) {
 	var MAX_GUESSES = 3;
 
 	var currentNote = availableNotes.random();
+	var startTime;
 	var guesses = 0;
 	var winCount = 0;
 	var frozen = true;
@@ -9766,7 +9767,10 @@ function createLevel(difficulty, clef, availableNotes) {
 	function end() {
 		frozen = true;
 
-		var info = 'You got ' + winCount + ' out of ' + MAX_GUESSES + ' notes right.' +
+		var time = (new Date().getTime() - startTime) / 1000;
+
+		var info = 'You got ' + winCount + ' out of ' + MAX_GUESSES + ' notes right in ' +
+					parseInt(time) + ' seconds.' +
 					'<br/>Press right arrow for the next level or enter to replay.';
 
 		$('#game-info').show().html(info);
@@ -9796,6 +9800,8 @@ function createLevel(difficulty, clef, availableNotes) {
 
 			currentNote = availableNotes.random();
 			draw(clef, currentNote);
+
+			startTime = new Date().getTime();
 		},
 		toDraw: function () {
 			return difficulty;
