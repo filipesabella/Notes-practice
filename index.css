@@ -68,3 +68,13 @@ body, div {
 .space {
 	visibility: hidden;
 }
+
+#level-info {
+	color: #fff;
+	font-size: 4em;
+}
+
+#game-info {
+	color: #fff;
+	font-size: 1.5em;
+}
