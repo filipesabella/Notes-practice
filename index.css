@@ -7,12 +7,13 @@ body, div {
 	font-size: 12px;
 }
 
-#note {
-	color: #fff;
-	font-size: 10em;
+#canvas {
+	background: #fff;
 	position: absolute;
 	left: 50%;
-	margin-left: -50px;
+	margin-left: -70px;
+	padding-left: 20px;
+	border: 5px solid #c0c0c0;
 }
 
 #keyboard {
