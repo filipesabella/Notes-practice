@@ -1,3 +1,6 @@
 Mini game to improve music sheet reading.
-
 Just open notes-practice.html, it contains all the scripts and styles in one file.
+
+Built on top of jquery and the excellent VexFlow library for drawing the sheet:
+http://www.vexflow.com
+
