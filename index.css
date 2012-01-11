@@ -62,7 +62,7 @@ body, div {
 	left: 10px;
 }
 #keyboard div.sharps .note div {
-	left: 5px;
+	left: 10px;
 }
 
 .space {
@@ -77,4 +77,14 @@ body, div {
 #game-info {
 	color: #fff;
 	font-size: 1.5em;
+}
+
+#controls {
+	position: absolute;
+	bottom: 10px;
+	color: #303030;
+}
+
+#controls a {
+	color: #e0e0e0;
 }
