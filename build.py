@@ -1,15 +1,18 @@
 import re
 
 output = ''
+def inline (result, template):
+	fileName = result.group(1)
+	print 'Inlining', fileName
+	return template.format(open(fileName).read())
+
 for line in open('index.html'):
 	resultJs = re.search('<script type="text/javascript" src="(.*?)"></script>', line)
 	resultCss = re.search('<link rel="stylesheet" type="text/css" href="(.*?)">', line)
 	if resultJs:
-		fileName = resultJs.group(1)
-		output += '<script type="text/javascript">' + open(fileName).read() + '</script>'
+		output += inline(resultJs, '<script type="text/javascript">{0}</script>')
 	elif resultCss:
-		fileName = resultCss.group(1)
-		output += '<style type="text/css">' + open(fileName).read() + '</style>'
+		output += inline(resultCss, '<style type="text/css">{0}</style>')
 	else:
 		output += line
 
