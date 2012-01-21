@@ -53,6 +53,6 @@ function draw(clef, note, keySignature) {
 	stave.setContext(ctx).draw();
 
 	note = note.toDraw();
-	var notesToDraw = [new Vex.Flow.StaveNote({keys: [note], duration: 'q'})];
+	var notesToDraw = [new Vex.Flow.StaveNote({clef: clef, keys: [note], duration: 'q'})];
 	Vex.Flow.Formatter.FormatAndDraw(ctx, stave, notesToDraw);
 }
