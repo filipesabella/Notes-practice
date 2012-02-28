@@ -49,7 +49,7 @@ var keyboard = (function () {
 		}
 	})();
 
-	var current = layoutFakeKeyboard`;
+	var current = layoutFakeKeyboard;
 
 	return {
 		swap: function () {
