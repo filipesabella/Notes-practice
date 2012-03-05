@@ -31,6 +31,7 @@ var levels = (function () {
 			var MAX_GUESSES = 10;
 			keySignatures = keySignatures || [createKeySignature('', [])];
 
+			var currentKeySignature;
 			var currentNote = availableNotes.random();
 			var startTime;
 			var guesses = 0;
@@ -44,7 +45,6 @@ var levels = (function () {
 				var old = currentNote;
 				while ((currentNote = availableNotes.random()) == old);
 
-				currentKeySignature = keySignatures.random();
 				currentNote = currentKeySignature.modify(currentNote);
 
 				if (!reinforcing) winCount++;
@@ -77,17 +77,9 @@ var levels = (function () {
 					if (!reinforcing) guesses++;
 
 					var shouldEndLevel = guesses == MAX_GUESSES && !reinforcing;
-					if (shouldEndLevel) {
-						end();
-					} else {
-						draw(clef, currentNote, currentKeySignature);
-					}
-				},
-				currentNote: function () {
-					return currentNote;
-				},
-				currentKeySignature: function () {
-					return keySignatures.random();
+					shouldEndLevel
+						? end()
+						: draw(clef, currentNote, currentKeySignature);
 				},
 				start: function () {
 					frozen = false;
@@ -103,9 +95,6 @@ var levels = (function () {
 				},
 				toDraw: function () {
 					return difficulty;
-				},
-				clef: function () {
-					return clef;
 				}
 			};
 

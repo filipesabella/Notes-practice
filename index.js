@@ -32,7 +32,7 @@ $(function () {
 	});
 
 	$('.note').click(function () {
-		var letter = this.id.toLowerCase();
+		var letter = this.id.toLowerCase().replace('sharp', '#');
 		levels.guess(letter);
 	});
 
