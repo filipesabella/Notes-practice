@@ -12,7 +12,7 @@ function range(min, max) {
 		random: function() {
 			return Math.floor(Math.random() * (max - min + 1) + min);
 		}
-	}
+	};
 }
 
 $(function () {
@@ -29,7 +29,7 @@ $(function () {
 			39: levels.next,
 			37: levels.previous,
 			13: levels.restart
-		}
+		};
 		var key = e.which;
 		actions[key] ? actions[key]() : keyboard.current().keydown(e);
 	});

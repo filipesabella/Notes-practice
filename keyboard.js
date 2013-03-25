@@ -33,7 +33,7 @@ var keyboard = (function () {
 			'h': 'a',
 			'u': 'a#',
 			'j': 'b'
-		};	
+		};
 		return {
 			keydown: function (e) {
 				var letter = charFromEvent(e);
@@ -46,7 +46,7 @@ var keyboard = (function () {
 					$('#' + note + ' div').html(key);
 				}
 			}
-		}
+		};
 	})();
 
 	var current = layoutFakeKeyboard;
@@ -59,5 +59,5 @@ var keyboard = (function () {
 		current: function () {
 			return current;
 		}
-	}
+	};
 })();

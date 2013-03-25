@@ -14,10 +14,10 @@ var notes = (function () {
 				if ($('#' + id).length == 0) {
 					var audio = $('<audio>').attr('id', id);
 					var source = $('<source>').attr('src', 'data:audio/mp3;base64,' + sounds[sound]);
-					audio.append(source)
+					audio.append(source);
 					$(document.body).append(audio);
-				} 
-				
+				}
+
 				var audio = $('#' + id)[0];
 				audio.currentTime != 0 && (audio.currentTime = 0);
 				audio.play();
@@ -30,7 +30,7 @@ var notes = (function () {
 					return letter.toLowerCase() == anotherLetter;
 				},
 				letter: function () {
-					return letter;	
+					return letter;
 				},
 				sharp: function () {
 					return notes.create(letter + '#', octave);
@@ -43,7 +43,7 @@ var notes = (function () {
 				fail: function () {
 					highlight('red');
 				}
-			}
+			};
 		}
-	}
+	};
 })();
