@@ -14,13 +14,31 @@ body, div {
 	font-size: 12px;
 }
 
-#canvas {
-	background: #fff;
+#canvas-container {
+	overflow: auto;
 	position: absolute;
 	left: 50%;
-	margin-left: -100px;
+	margin-left: -120px;
+}
+
+#canvas-container .level-control {
+	color: #909090;
+	float: left;
+	height: 80px;
+	padding: 70px 3px 0 3px;
+}
+
+#canvas-container .level-control:hover {
+	background-color: #a0a0a0;
+	color: white;
+	cursor: pointer;
+}
+
+#canvas {
+	float: left;
 	padding-left: 20px;
-	border: 5px solid #c0c0c0;
+	background: #fff;
+	border: 5px solid #a0a0a0;
 }
 
 #keyboard {

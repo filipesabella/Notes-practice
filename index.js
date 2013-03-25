@@ -2,7 +2,7 @@ Array.prototype.random = function () {
 	return this[Math.floor(Math.random() * this.length)];
 };
 Array.prototype.contains = function (element) {
-	for (var i = 0; i < this.length; i++) 
+	for (var i = 0; i < this.length; i++)
 		if (this[i] == element)
 			return true;
 	return false;
@@ -20,6 +20,9 @@ $(function () {
 		keyboard.swap();
 		return false;
 	});
+
+	$('.previous-level').click(levels.previous);
+	$('.next-level').click(levels.next);
 
 	$(document).keydown(function (e) {
 		var actions = {
