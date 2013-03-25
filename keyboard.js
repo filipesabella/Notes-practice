@@ -1,3 +1,14 @@
+var storage = (function () {
+	return {
+		store: function (key, val) {
+			localStorage.setItem(key, val);
+		},
+		get: function (key, def) {
+			return localStorage[key] || def || null;
+		}
+	};
+})();
+
 var keyboard = (function () {
 	function charFromEvent(e) {
 		return String.fromCharCode(e.which).toLowerCase();
@@ -5,7 +16,7 @@ var keyboard = (function () {
 	var layoutNotes = {
 		keydown: function (e) {
 			var code = e.which;
-			 // less than A or bigger than G
+			// less than A or bigger than G
 			if (code < 65 || code > 71) return;
 
 			var letter = charFromEvent(e);
@@ -17,6 +28,9 @@ var keyboard = (function () {
 				$('#' + letter + ' div').html(letter);
 				$('#' + letter + 'sharp div').html(letter.toUpperCase());
 			});
+		},
+		name: function () {
+			return 'notes';
 		}
 	};
 	var layoutFakeKeyboard = (function () {
@@ -45,19 +59,28 @@ var keyboard = (function () {
 					note = note.replace('#', 'sharp');
 					$('#' + note + ' div').html(key);
 				}
+			},
+			name: function () {
+				return 'fake';
 			}
 		};
 	})();
 
-	var current = layoutFakeKeyboard;
+	var current = storage.get('layout', layoutFakeKeyboard.name()) == layoutFakeKeyboard.name()
+									? layoutFakeKeyboard
+									: layoutNotes;
 
 	return {
 		swap: function () {
 			current = current === layoutNotes ? layoutFakeKeyboard : layoutNotes;
 			current.draw();
+			storage.store('layout', current.name());
 		},
-		current: function () {
-			return current;
+		keydown: function (e) {
+			current.keydown(e);
+		},
+		draw: function () {
+			current.draw();
 		}
 	};
 })();

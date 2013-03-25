@@ -31,7 +31,7 @@ $(function () {
 			13: levels.restart
 		};
 		var key = e.which;
-		actions[key] ? actions[key]() : keyboard.current().keydown(e);
+		actions[key] ? actions[key]() : keyboard.keydown(e);
 	});
 
 	$('.note').click(function () {
@@ -39,7 +39,7 @@ $(function () {
 		levels.guess(letter);
 	});
 
-
+	keyboard.draw();
 	levels.start();
 });
 
