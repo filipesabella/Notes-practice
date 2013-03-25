@@ -1,5 +1,6 @@
 old
 .DS_store
-.pyc
+*.pyc
 converter.py
 sounds
+
